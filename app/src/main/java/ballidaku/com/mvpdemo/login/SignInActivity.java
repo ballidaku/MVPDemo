@@ -39,7 +39,7 @@ public class SignInActivity extends AppCompatActivity implements SignInInterface
     {
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        findViewById(R.id.button).setOnClickListener(this);
+        findViewById(R.id.buttonSignIn).setOnClickListener(this);
 
         loginPresenter=new SignInPresenter(this);
     }
@@ -54,7 +54,7 @@ public class SignInActivity extends AppCompatActivity implements SignInInterface
     @Override
     public void setEmailValidError()
     {
-        editTextPassword.setError(getString(R.string.email_valid_error));
+        editTextEmail.setError(getString(R.string.email_valid_error));
     }
 
     @Override
@@ -83,7 +83,7 @@ public class SignInActivity extends AppCompatActivity implements SignInInterface
 
         switch (view.getId())
         {
-            case R.id.button:
+            case R.id.buttonSignIn:
 
                 loginPresenter.validateCredentials(editTextEmail.getText().toString(), editTextPassword.getText().toString());
 
